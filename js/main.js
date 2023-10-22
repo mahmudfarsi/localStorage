@@ -5,6 +5,7 @@ const filter = $.querySelector('#filter');
 const btnClear = $.querySelector('#btnClear');
 const list = $.querySelector('.list_items');
 let dataObj = JSON.parse(localStorage.getItem('mode'))??[];
+//btn submit
 btnSubmit.addEventListener('click',()=>{
     let inputValue = input.value;
     dataObj.push(inputValue);
@@ -17,8 +18,8 @@ btnSubmit.addEventListener('click',()=>{
     list.append(li);
     li.append(i);
     input.value = '';
-
 });
+//forEch for li
 dataObj.forEach(element => {
     let li = $.createElement('li');
     li.className = 'items';
@@ -28,6 +29,7 @@ dataObj.forEach(element => {
     list.append(li);
     li.append(i);
 });
+//event click on list and remove items
 list.addEventListener('click',(e)=>{
     let textContent = e.target.textContent;
     let findData = dataObj.indexOf(textContent);
@@ -38,12 +40,14 @@ list.addEventListener('click',(e)=>{
         localStorage.setItem('mode',JSON.stringify(dataObj));
     }
 });
+//btn clear list items input value and clear localStorage
 btnClear.addEventListener('click',()=>{
     list.innerHTML = '';
     input.value = '';
     filter.value = '';
     localStorage.clear();
 });
+//filter for find iems
 filter.addEventListener('keyup',(e)=>{
     let filterValue = e.target.value.toLocaleLowerCase();
     $.querySelectorAll('.items').forEach(item=>{
@@ -54,6 +58,7 @@ filter.addEventListener('keyup',(e)=>{
         }
     })
 });
+//evet keydown for enter keyCode and add item on input
 input.addEventListener('keydown',(e)=>{
     if(e.keyCode === 13){
         let inputValue = input.value;
