@@ -4,3 +4,79 @@
   list-style-type: none;
   text-decoration: none;
   box-sizing: border-box; }
+
+body {
+  background: #d9d9d9; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .container .wrapper {
+    width: 55%;
+    max-width: 550px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px; }
+    .container .wrapper .box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px; }
+      .container .wrapper .box .form_control {
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        gap: 15px; }
+        .container .wrapper .box .form_control input {
+          padding: 5px 15px;
+          font-size: 20px;
+          border-radius: 5px;
+          border: none;
+          outline: none; }
+          .container .wrapper .box .form_control input::placeholder {
+            color: black;
+            text-transform: capitalize; }
+        .container .wrapper .box .form_control button {
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          font-size: 15px;
+          text-transform: capitalize; }
+      .container .wrapper .box .list_box {
+        width: 100%;
+        height: 100%; }
+        .container .wrapper .box .list_box .list_items {
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-flow: row wrap;
+          gap: 10px 10px; }
+          .container .wrapper .box .list_box .list_items .items {
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            padding: 10px 8px;
+            background: #067c7e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            gap: 20px;
+            white-space: nowrap;
+            color: white; }
+            .container .wrapper .box .list_box .list_items .items .fa-xmark {
+              cursor: pointer; }
