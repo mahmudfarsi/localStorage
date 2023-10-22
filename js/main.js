@@ -54,3 +54,18 @@ filter.addEventListener('keyup',(e)=>{
         }
     })
 });
+input.addEventListener('keydown',(e)=>{
+    if(e.keyCode === 13){
+        let inputValue = input.value;
+        dataObj.push(inputValue);
+        localStorage.setItem('mode',JSON.stringify(dataObj))
+        let li = $.createElement('li');
+        li.className = 'items';
+        li.textContent = inputValue
+        let i = $.createElement('i');
+        i.className = 'fa-solid fa-xmark';
+        list.append(li);
+        li.append(i);
+        input.value = ''; 
+    }
+});
