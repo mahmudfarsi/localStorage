@@ -44,6 +44,13 @@ btnClear.addEventListener('click',()=>{
     filter.value = '';
     localStorage.clear();
 });
-
-
-//filter ..............{}
+filter.addEventListener('keyup',(e)=>{
+    let filterValue = e.target.value.toLocaleLowerCase();
+    $.querySelectorAll('.items').forEach(item=>{
+        if(item.textContent.toLocaleLowerCase().indexOf(filterValue) == -1){
+            item.style.display = 'none';
+        }else{
+            item.style.display = 'flex'
+        }
+    })
+});
